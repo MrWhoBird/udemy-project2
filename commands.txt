@@ -1,0 +1,13 @@
+- create iamuser for awscli
+- create terraform script (terraform init, validate, plan, apply --auto-approve, destroy )
+- 3 instances ec2 -> ansible, jenkins, jenkins slave
+
+
+ansible inventory 27
+add hosts file and jenkins conf to your pc under /ansible
+28 - write ansible
+30 - update terraform to open 8080 for jenkins
+
+jenkins master - slave configuration
+pipeline script from scm -> where is jenkins file
+multibranch jenkins
