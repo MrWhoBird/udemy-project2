@@ -1,3 +1,4 @@
-terraform-code/.terraform
-terraform-code/.terraform.*
-terraform-code/terraform.*
+scripts/terraform-code/.terraform
+scripts/terraform-code/.terraform.*
+scripts/terraform-code/terraform.*
+ttrend-app/target/*

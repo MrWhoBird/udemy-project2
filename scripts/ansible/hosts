@@ -1,0 +1,11 @@
+[jenkins-master]
+ip
+[jenkins-master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/udemy-projects.pem
+
+[jenkins-slave]
+ip
+[jenkins-slave:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/udemy-projects.pem

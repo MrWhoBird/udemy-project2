@@ -1,13 +1,44 @@
-- create iamuser for awscli
-- create terraform script (terraform init, validate, plan, apply --auto-approve, destroy )
-- 3 instances ec2 -> ansible, jenkins, jenkins slave
+TERRAFORM:
+  create iamuser for awscli
+  create terraform script -> 3 instances ec2 -> ansible, jenkins, jenkins slave
+  terraform init, validate, plan, apply --auto-approve, destroy
 
+ANSIBLE:
+  ansible setup [ansible-setup.sh by terraform]
+  add jenkins master and slave hosts to ansible [hosts]
+  change key mode to read only
+  ansible all -i hosts -m ping
+  ansible-playbook -i hosts jenkins-master-setup.yml / 28
+  ansible-playbook -i hosts jenkins-slave-setup.yml / 31
+  
+JENKINS-MASTER:
+  add credentials for slave (ssh-key)
+  add slave node (workdir /home/ubuntu/jenkins) -> create a slave job
+  ***
+  pipeline script from scm -> where is jenkinsfile
+    add multibranch jenkins
 
-ansible inventory 27
-add hosts file and jenkins conf to your pc under /ansible
-28 - write ansible
-30 - update terraform to open 8080 for jenkins
+SONARQUBE:
+  create account
+  generate token and add to jenkins
+  sonarqube plugin
+  add sonarqube server
+  add sonarqube scanner tool
+  create a project and add sonar-properties file
+  add sonarqube stage to jenkinsfile /47
+  add test stage
+  create quality gate on sonar server and integrate it in jenkinsfile
 
-jenkins master - slave configuration
-pipeline script from scm -> where is jenkins file
-multibranch jenkins
+JFROG:
+  create account (14 trial)
+  create token
+  plugin
+  jenkins stage
+
+DOCKER:
+  install docker on slave [jenkins-slave-setup] / 57
+  create a Dockerfile
+  create docker repo in JFROG
+  install docker pipeline plugin
+  add stage to jenkinsfile
+
