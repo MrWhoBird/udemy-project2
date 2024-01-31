@@ -11,7 +11,7 @@ pipeline {
       stage("build"){
         steps {
             echo "----------- build started ----------"
-            sh 'mvn clean deploy -Dfile="/home/ubuntu/jenkins/workspace/slave-test-build/ttrend-app"'
+            sh 'mvn -f /home/ubuntu/jenkins/workspace/slave-test-build/ttrend-app/pom.xml clean deploy'
             echo "----------- build completed ----------"
         }
       }
